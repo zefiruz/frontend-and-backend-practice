@@ -239,3 +239,71 @@ body {
         padding: 15px;
     }
 }
+
+
+/* Стили для главной страницы */
+
+/* Блок с информацией об авторе */
+#content > p:nth-child(3),
+#content > p:nth-child(4),
+#content > p:nth-child(5) {
+    background: white;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Фото */
+#content img {
+    border: 3px solid #2c3e50;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* Навыки */
+#content > div:nth-child(6),
+#content > div:nth-child(7),
+#content > div:nth-child(8),
+#content > div:nth-child(9) {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #2980b9;
+}
+
+/* Блок опыта работы */
+#content > div:nth-child(10) {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border: 2px solid #e74c3c;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Карточки внутри опыта */
+#content > div:nth-child(10) > div {
+    background: #f8f9fa;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    border-left: 4px solid #2ecc71;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    #content > div:nth-child(6),
+    #content > div:nth-child(7),
+    #content > div:nth-child(8),
+    #content > div:nth-child(9) {
+        display: block;
+        margin: 5px 0;
+        text-align: center;
+    }
+}
