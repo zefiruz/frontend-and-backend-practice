@@ -1,36 +1,37 @@
-/* Базовые стили */
-* {
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background: linear-gradient(to bottom, #2c3e50 0%, #8fa4b9 50%, #2c3e50 100%);
+    min-height: 100vh;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
-    color: #333;
-    background-color: #f5f5f5;
+/* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
 }
+
 
 /* Хэдер */
-#header {
+.header {
     background-color: #2c3e50;
     color: white;
     padding: 20px 0;
     text-align: center;
 }
 
-#header h1 {
-    font-size: 24px;
-}
-
-/* Меню навигации - ПРОСТОЙ ВАРИАНТ */
-#menu {
+/* Меню навигации */
+.nav {
     background-color: #34495e;
     padding: 10px 0;
 }
 
-#menu ul {
+.nav-list {
     list-style: none;
     display: flex;
     justify-content: center;
@@ -40,7 +41,7 @@ body {
     padding: 0 20px;
 }
 
-#menu a {
+.nav-link { 
     color: white;
     text-decoration: none;
     padding: 8px 16px;
@@ -48,8 +49,7 @@ body {
     transition: background-color 0.3s;
 }
 
-/* Подсвечивание при наведении */
-#menu a:hover {
+.nav-link:hover {
     background-color: #1abc9c;
 }
 
@@ -103,7 +103,7 @@ body {
 }
 
 /* Футер */
-#footer {
+.footer {
     background-color: #2c3e50;
     color: white;
     text-align: center;
@@ -111,31 +111,8 @@ body {
     margin-top: 40px;
 }
 
-#footer p {
+.footer p {
     margin-bottom: 5px;
-}
-
-/* Адаптивность для мобильных */
-@media (max-width: 768px) {
-    #menu ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-    }
-    
-    #menu a {
-        display: block;
-        width: 200px;
-        text-align: center;
-    }
-    
-    #content {
-        padding: 0 10px;
-    }
-    
-    .news-article {
-        padding: 15px;
-    }
 }
 
 /* Стили для страницы товаров */
@@ -157,7 +134,7 @@ body {
 .product-card img {
     max-width: 100%;
     height: 150px;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 5px;
     margin-bottom: 10px;
 }
@@ -173,18 +150,6 @@ body {
     font-size: 20px;
     font-weight: bold;
     margin: 10px 0;
-}
-
-/* Адаптивность для мобильных */
-@media (max-width: 768px) {
-    .goods-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-    }
-    
-    .product-card {
-        padding: 10px;
-    }
 }
 
 /* Стили для страницы контактов */
@@ -228,82 +193,111 @@ body {
     background-color: #2980b9;
 }
 
-/* Адаптивность для мобильных */
-@media (max-width: 768px) {
-    .contacts-container {
-        margin: 20px;
-        padding: 10px;
-    }
-    
-    .contact-item {
-        padding: 15px;
-    }
-}
-
-
 /* Стили для главной страницы */
 
 /* Блок с информацией об авторе */
-#content > p:nth-child(3),
-#content > p:nth-child(4),
-#content > p:nth-child(5) {
+.profile-header {
     background: white;
-    padding: 15px;
-    margin: 10px 0;
-    border: 2px solid #3498db;
+    padding: 30px;
+    margin: 20px 0;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    border-left: 4px solid #3498db;
 }
 
-/* Фото */
-#content img {
+.profile-title {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.profile-photo {
     border: 3px solid #2c3e50;
     border-radius: 8px;
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
-/* Навыки */
-#content > div:nth-child(6),
-#content > div:nth-child(7),
-#content > div:nth-child(8),
-#content > div:nth-child(9) {
-    display: inline-block;
-    background: #3498db;
-    color: white;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-    border: 1px solid #2980b9;
+.profile-name {
+    color: #2c3e50;
+    margin: 15px 0;
+    font-size: 24px;
 }
 
-/* Блок опыта работы */
-#content > div:nth-child(10) {
+.profile-group {
+    color: #666;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Блок "Обо мне" */
+.about-me {
     background: white;
     padding: 20px;
     margin: 20px 0;
-    border: 2px solid #e74c3c;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* Карточки внутри опыта */
-#content > div:nth-child(10) > div {
-    background: #f8f9fa;
-    padding: 15px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
     border-left: 4px solid #2ecc71;
 }
 
-/* Адаптивность для мобильных */
-@media (max-width: 768px) {
-    #content > div:nth-child(6),
-    #content > div:nth-child(7),
-    #content > div:nth-child(8),
-    #content > div:nth-child(9) {
-        display: block;
-        margin: 5px 0;
-        text-align: center;
-    }
+.about-me p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Навыки */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.skill-tag {
+    background: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: 1px solid #2980b9;
+    font-size: 14px;
+}
+
+/* Блок опыта работы */
+.experience-section {
+    background: white;
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-left: 4px solid #e74c3c;
+}
+
+.section-title {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Карточки опыта */
+.experience-card {
+    background: #f8f9fa;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    border-left: 4px solid #2ecc71;
+    transition: transform 0.3s ease;
+}
+
+.experience-title {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.experience-desc {
+    color: #555;
+    line-height: 1.6;
 }
