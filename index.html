@@ -7,58 +7,65 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-    <div class="page-container">
-        <div class="header">
-            <h1>Хэдер</h1>
-        </div>
-        <div class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-            </ul>
-        </div>
+        <div class="page-container">
+            <header class="header">
+                <h1>Хэдер</h1>
+            </header>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                    <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                </ul>
+            </nav>
 
-        <div class="content">
-            <div class="profile-header">
-                <h1 class="profile-title">Информация об авторе</h1>
-                <img class="profile-photo" src="images/grusha.jpg" alt="Фото автора" width="200" height="250">
-                <h2 class="profile-name">Малямов Семён Алексеевич</h2>
-                <p class="profile-group">ЭФБО-02-24</p>
-            </div>
+            <main class="content">
+                <article class="profile-header">
+                    <h1 class="profile-title">Информация об авторе</h1>
+                    <img class="profile-photo" src="images/grusha.jpg" alt="Фото автора" width="200" height="250">
+                    <h2 class="profile-name">Малямов Семён Алексеевич</h2>
+                    <p class="profile-group">ЭФБО-02-24</p>
+                </article>
 
-            <div class="about-me">
-                <p>Обо мне: студент РТУ МИРЭА</p>
-            </div>
-            <div class="skills-container">
-                <div class="skill-tag">Навык 1: </div>
-                <div class="skill-tag">Навык 2</div>
-                <div class="skill-tag">Навык 3</div>
-            </div>
+                <section class="about-me">
+                    <h2>Обо мне</h2>
+                    <p>Обо мне: крутой студент РТУ МИРЭА</p>
+                </section>
+                
+                <section class="skills-container">
+                    <h2>Мои навыки</h2>
+                    <div class="skills-grid">
+                        <div class="skill-tag">HTML/CSS</div>
+                        <div class="skill-tag">C#</div>
+                        <div class="skill-tag">Git</div>
+                    </div>
+                </section>
             
-            <div class="experience-section">
-                <h2 class="section-title">Мой опыт работы</h2>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 1</h3>
-                    <p class="experience-desc">Работал фантазёром. Сочинял и праздновал.</p>
-                </div>
+                <section class="experience-section">
+                    <h2 class="section-title">Мой опыт работы</h2>
+                    <div class="experience-grid">
+                        <article class="experience-card">
+                            <h3 class="experience-title">Опыт 1</h3>
+                            <p class="experience-desc">Работал охраником. Наблюдал и защищал.</p>
+                        </article>
 
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 2</h3>
-                    <p class="experience-desc">Работал воровством. Воровал и продавал.</p>
-                </div>
+                        <article class="experience-card">
+                            <h3 class="experience-title">Опыт 2</h3>
+                            <p class="experience-desc">Работал строителем. Красил и пилил.</p>
+                        </article>
 
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 3</h3>
-                    <p class="experience-desc">Работал рэпером. Читал и пел.</p>
-                </div>
-            </div>
+                        <article class="experience-card">
+                            <h3 class="experience-title">Опыт 3</h3>
+                            <p class="experience-desc">Работал водителем. Подвозил и перевозил.</p>
+                        </article>
+                    </div>    
+                </section>
+            </main>
+            <footer class="footer">
+                <p>© 2025 Практическая работа. ЭФБО-02-24</p>
+                <p>Контактная информация: zefirsk@yandex.ru</p>
+            </footer>
         </div>
-        <div class="footer">
-            <p>© 2025 Практическая работа. ЭФБО-02-24</p>
-            <p>Контактная информация: zefirsk@yandex.ru</p>
-        </div>
-    </div>
     </body>
 </html>
