@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,67 +7,183 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="page-container">
+        <!-- Переключатель темы -->
+        <div class="theme-switcher">
+            <button class="theme-switcher__button" aria-label="Переключить тему">
+                <svg class="theme-switcher__icon" viewBox="0 0 24 24">
+                    <path d="M12,18C8.69,18 6,15.31 6,12C6,8.69 8.69,6 12,6C15.31,6 18,8.69 18,12C18,15.31 15.31,18 12,18M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"/>
+                </svg>
+            </button>
+        </div>
+
+        <div class="page">
             <header class="header">
-                <h1>Новости</h1>
+                <h1 class="header__title">Новости</h1>
             </header>
             
             <nav class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                    <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a class="nav__link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav__item nav__item--active">
+                        <a class="nav__link" href="news.html">Новости</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="goods.html">Товары</a>
+                    </li>
+                    <li class="nav__item">
+                        <a class="nav__link" href="contacts.html">Контакты</a>
+                    </li>
                 </ul>
             </nav>
 
-            <main class="content">
-                <div class="news-container">
-                    <!-- Новость 1 -->
-                    <article class="news-article">
-                        <h2 class="news-title">Годовая инфляция в сентябре составила восемь процентов</h2>
-                        <div class="news-meta">
-                            <strong>Дата публикации:</strong> 01 октября 2025 года | 
-                            <strong>Автор:</strong> Пелагия Тихонова
-                        </div>
-                        <div class="news-text">
-                            <p>СОЧИ, 1 окт - РИА Новости. Годовая инфляция в России в сентябре составила 8%, по итогам года она будет на уровне 6-7%, заявил вице-премьер РФ Александр Новак.</p>
-                        </div>
-                    </article>
+            <main class="main">
+                <section class="news">
+                    <h2 class="news__title">Последние новости</h2>
+                    <div class="news__list">
+                        <!-- Новость 1 -->
+                        <article class="news-item">
+                            <h3 class="news-item__title">Годовая инфляция в сентябре составила восемь процентов</h3>
+                            <div class="news-item__meta">
+                                <span class="news-item__date">01 октября 2025 года</span>
+                                <span class="news-item__author">Автор: Пелагия Тихонова</span>
+                            </div>
+                            <div class="news-item__content">
+                                <p class="news-item__text">СОЧИ, 1 окт - РИА Новости. Годовая инфляция в России в сентябре составила 8%, по итогам года она будет на уровне 6-7%, заявил вице-премьер РФ Александр Новак.</p>
+                            </div>
+                            <div class="news-item__actions">
+                                <button class="button button--primary news-item__read-more">Читать далее</button>
+                                <button class="button button--secondary news-item__share">Поделиться</button>
+                            </div>
+                        </article>
 
-                    <!-- Новость 2 -->
-                    <article class="news-article">
-                        <h2 class="news-title">В Афганистане восстановили работу интернета</h2>
-                        <div class="news-meta">
-                            <strong>Дата публикации:</strong> 01 ноября 2024 года | 
-                            <strong>Автор:</strong> Siddiqullah Alizai
-                        </div>
-                        <div class="news-text">
-                            <p>Власти Афганистана полностью восстановили работу интернета, передает телеканал Tolo News.
-                            "Работа интернета возобновлена в Афганистане. Все телекоммуникационные сети страны возобновили работу", - говорится в сообщении, опубликованном на странице телеканала в социальной сети X (бывший Twitter).
-                            Служба мониторинга интернета NetBlocks 29 сентября сообщила о полном отключении интернета в Афганистане на фоне мер, принимаемых талибами по "обеспечению соблюдения нравственности". СМИ писали, что отключение интернета привело, в частности, к отмене всех рейсов в аэропорту Кабула, а само отключение интернета связано с решением руководства страны.
-                            Ранее правящее в Афганистане движение "Талибан" опровергло заявления об общенациональном запрете интернета, сославшись на изношенную инфраструктуру.</p>
-                        </div>
-                    </article>
+                        <!-- Новость 2 -->
+                        <article class="news-item news-item--featured">
+                            <div class="news-item__badge">Главная новость</div>
+                            <h3 class="news-item__title">В Афганистане восстановили работу интернета</h3>
+                            <div class="news-item__meta">
+                                <span class="news-item__date">01 ноября 2024 года</span>
+                                <span class="news-item__author">Автор: Siddiqullah Alizai</span>
+                            </div>
+                            <div class="news-item__content">
+                                <p class="news-item__text">Власти Афганистана полностью восстановили работу интернета, передает телеканал Tolo News.</p>
+                                <p class="news-item__text">"Работа интернета возобновлена в Афганистане. Все телекоммуникационные сети страны возобновили работу", - говорится в сообщении, опубликованном на странице телеканала в социальной сети X (бывший Twitter).</p>
+                                <p class="news-item__text">Служба мониторинга интернета NetBlocks 29 сентября сообщила о полном отключении интернета в Афганистане на фоне мер, принимаемых талибами по "обеспечению соблюдения нравственности".</p>
+                            </div>
+                            <div class="news-item__actions">
+                                <button class="button button--primary news-item__read-more">Читать далее</button>
+                                <button class="button button--secondary news-item__share">Поделиться</button>
+                            </div>
+                        </article>
 
-                    <!-- Новость 3 -->
-                    <article class="news-article">
-                        <h2 class="news-title">«Кайрат» разгромно проиграл «Реалу» в матче Лиги чемпионов, Мбаппе оформил хет-трик</h2>
-                        <div class="news-meta">
-                            <strong>Дата публикации:</strong> 30 сентября 2025 года | 
-                            <strong>Автор:</strong> Дмитрий Тучков
-                        </div>
-                        <div class="news-text">
-                            <p>Завершился матч 2-го тура общего этапа Лиги чемпионов УЕФА, в котором встречались «Кайрат» и мадридский «Реал». Игра проходила на стадионе «Центральный» в городе Алма-Ата (Казахстан). В качестве главного арбитра встречи выступил Марко Гуида. Матч закончился со счётом 5:0 в пользу гостей.</p>
-                        </div>
-                    </article>
-                </div>
+                        <!-- Новость 3 -->
+                        <article class="news-item">
+                            <h3 class="news-item__title">«Кайрат» разгромно проиграл «Реалу» в матче Лиги чемпионов, Мбаппе оформил хет-трик</h3>
+                            <div class="news-item__meta">
+                                <span class="news-item__date">30 сентября 2025 года</span>
+                                <span class="news-item__author">Автор: Дмитрий Тучков</span>
+                            </div>
+                            <div class="news-item__content">
+                                <p class="news-item__text">Завершился матч 2-го тура общего этапа Лиги чемпионов УЕФА, в котором встречались «Кайрат» и мадридский «Реал». Игра проходила на стадионе «Центральный» в городе Алма-Ата (Казахстан). В качестве главного арбитра встречи выступил Марко Гуида. Матч закончился со счётом 5:0 в пользу гостей.</p>
+                            </div>
+                            <div class="news-item__actions">
+                                <button class="button button--primary news-item__read-more">Читать далее</button>
+                                <button class="button button--secondary news-item__share">Поделиться</button>
+                            </div>
+                        </article>
+
+                        <!-- Новость 4 -->
+                        <article class="news-item news-item--compact">
+                            <h3 class="news-item__title">Новые технологии в веб-разработке</h3>
+                            <div class="news-item__meta">
+                                <span class="news-item__date">28 сентября 2025 года</span>
+                                <span class="news-item__author">Автор: Алексей Петров</span>
+                            </div>
+                            <div class="news-item__content">
+                                <p class="news-item__text">Представлены новые фреймворки для фронтенд разработки, которые упростят создание пользовательских интерфейсов.</p>
+                            </div>
+                            <div class="news-item__actions">
+                                <button class="button button--primary news-item__read-more">Читать далее</button>
+                            </div>
+                        </article>
+                    </div>
+                </section>
             </main>
 
             <footer class="footer">
-                <p>© 2025 Практическая работа. ЭФБО-02-24</p>
-                <p>Контактная информация: zefirsk@yandex.ru</p>
+                <p class="footer__text">&copy; 2025 Практическая работа. ЭФБО-02-24</p>
+                <p class="footer__text">Контактная информация: zefirsk@yandex.ru</p>
             </footer>
         </div>
+
+        <script>
+            // Переключение темы
+            const themeSwitcher = document.querySelector('.theme-switcher__button');
+            const themeIcon = document.querySelector('.theme-switcher__icon');
+            
+            themeSwitcher.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                
+                document.documentElement.setAttribute('data-theme', newTheme);
+                themeIcon.style.transform = 'rotate(180deg)';
+                setTimeout(() => {
+                    themeIcon.style.transform = 'rotate(0deg)';
+                }, 300);
+                localStorage.setItem('theme', newTheme);
+            });
+            
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            }
+
+            // Взаимодействие с новостями
+            document.querySelectorAll('.news-item__read-more').forEach(button => {
+                button.addEventListener('click', function() {
+                    const newsItem = this.closest('.news-item');
+                    const content = newsItem.querySelector('.news-item__content');
+                    
+                    content.classList.toggle('news-item__content--expanded');
+                    
+                    if (content.classList.contains('news-item__content--expanded')) {
+                        this.textContent = 'Свернуть';
+                        newsItem.classList.add('news-item--expanded');
+                    } else {
+                        this.textContent = 'Читать далее';
+                        newsItem.classList.remove('news-item--expanded');
+                    }
+                });
+            });
+
+            // Функциональность кнопки "Поделиться"
+            document.querySelectorAll('.news-item__share').forEach(button => {
+                button.addEventListener('click', function() {
+                    const newsItem = this.closest('.news-item');
+                    const title = newsItem.querySelector('.news-item__title').textContent;
+                    
+                    if (navigator.share) {
+                        navigator.share({
+                            title: title,
+                            text: 'Интересная новость',
+                            url: window.location.href
+                        });
+                    } else {
+                        // Fallback для браузеров без поддержки Web Share API
+                        alert(`Поделиться новостью: "${title}"`);
+                    }
+                });
+            });
+
+            // Анимация при загрузке новостей
+            document.addEventListener('DOMContentLoaded', () => {
+                const newsItems = document.querySelectorAll('.news-item');
+                newsItems.forEach((item, index) => {
+                    item.style.animationDelay = `${index * 0.1}s`;
+                    item.classList.add('news-item--animated');
+                });
+            });
+        </script>
     </body>
 </html>

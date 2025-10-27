@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Товары - Портфолио</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <!-- Переключатель темы -->
+    <div class="theme-switcher">
+        <button class="theme-switcher__button" aria-label="Переключить тему">
+            <svg class="theme-switcher__icon" viewBox="0 0 24 24">
+                <path d="M12,18C8.69,18 6,15.31 6,12C6,8.69 8.69,6 12,6C15.31,6 18,8.69 18,12C18,15.31 15.31,18 12,18M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"/>
+            </svg>
+        </button>
+    </div>
+
+    <div class="page">
+        <header class="header">
+            <h1 class="header__title">Товары</h1>
+        </header>
+        
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="nav__link" href="../index.html">Главная</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="news.html">Новости</a>
+                </li>
+                <li class="nav__item nav__item--active">
+                    <a class="nav__link" href="goods.html">Товары</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="contacts.html">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="main">
+            <section class="goods">
+                <h2 class="goods__title">Наши товары</h2>
+                <div class="goods__grid">
+                    <!-- Товар 1 -->
+                    <div class="product-card product-card--new">
+                        <img src="../images/laptop.jpg" alt="Ноутбук игровой" class="product-card__image">
+                        <h3 class="product-card__title">Ноутбук игровой</h3>
+                        <div class="product-card__price">50 000 руб.</div>
+                        <div class="product-card__actions">
+                            <button class="button button--primary">В корзину</button>
+                            <button class="button button--secondary">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Товар 2 -->
+                    <div class="product-card product-card--discount">
+                        <img src="../images/phone.jpg" alt="Смартфон" class="product-card__image">
+                        <h3 class="product-card__title">Смартфон</h3>
+                        <div>
+                            <span class="product-card__price--old">30 000 руб.</span>
+                            <span class="product-card__price">25 000 руб.</span>
+                        </div>
+                        <div class="product-card__discount">-17%</div>
+                        <div class="product-card__actions">
+                            <button class="button button--primary">В корзину</button>
+                            <button class="button button--secondary">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Товар 3 -->
+                    <div class="product-card">
+                        <img src="../images/headset.jpg" alt="Наушники" class="product-card__image">
+                        <h3 class="product-card__title">Наушники</h3>
+                        <div class="product-card__price">5 000 руб.</div>
+                        <div class="product-card__actions">
+                            <button class="button button--primary">В корзину</button>
+                            <button class="button button--secondary">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Товар 4 -->
+                    <div class="product-card">
+                        <img src="../images/keyboard.jpg" alt="Клавиатура" class="product-card__image">
+                        <h3 class="product-card__title">Клавиатура</h3>
+                        <div class="product-card__price">3 000 руб.</div>
+                        <div class="product-card__actions">
+                            <button class="button button--primary">В корзину</button>
+                            <button class="button button--secondary">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Товар 5 -->
+                    <div class="product-card product-card--selected">
+                        <img src="../images/mouse.jpg" alt="Мышь компьютерная" class="product-card__image">
+                        <h3 class="product-card__title">Мышь компьютерная</h3>
+                        <div class="product-card__price">1 500 руб.</div>
+                        <div class="product-card__actions">
+                            <button class="button button--success">В корзине</button>
+                            <button class="button button--secondary">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__text">&copy; 2024 Практическая работа. ЭФБО-02-24</p>
+            <p class="footer__text">Контактная информация: zefirsk@yandex.ru</p>
+        </footer>
+    </div>
+
+    <script>
+        // Переключение темы
+        const themeSwitcher = document.querySelector('.theme-switcher__button');
+        const themeIcon = document.querySelector('.theme-switcher__icon');
+        
+        themeSwitcher.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            themeIcon.style.transform = 'rotate(180deg)';
+            setTimeout(() => {
+                themeIcon.style.transform = 'rotate(0deg)';
+            }, 300);
+            localStorage.setItem('theme', newTheme);
+        });
+        
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+
+        // Взаимодействие с карточками товаров
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!e.target.closest('.button')) {
+                    this.classList.toggle('product-card--selected');
+                }
+            });
+        });
+
+        // Обработка кнопок "В корзину"
+        document.querySelectorAll('.button--primary').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const card = this.closest('.product-card');
+                this.textContent = 'В корзине';
+                this.classList.remove('button--primary');
+                this.classList.add('button--success');
+                card.classList.add('product-card--selected');
+            });
+        });
+    </script>
+</body>
+</html>
